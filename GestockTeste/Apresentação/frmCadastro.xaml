@@ -1,0 +1,19 @@
+﻿<Window x:Class="GestockTeste.Apresentação.frmCadastro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestockTeste.Apresentação"
+        mc:Ignorable="d"
+        Title="frmCadastro" Height="310" Width="380">
+    <Grid>
+        <Label x:Name="lblId" Content="ID" HorizontalAlignment="Left" Margin="54,45,0,0" VerticalAlignment="Top" Width="84" Height="54"/>
+        <TextBox x:Name="txbId" HorizontalAlignment="Left" Margin="125,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblNome" Content="Nome" HorizontalAlignment="Left" Margin="58,121,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txbNome" HorizontalAlignment="Left" Margin="125,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblCategoria" Content="Categoria" HorizontalAlignment="Left" Margin="63,200,0,0" VerticalAlignment="Top" Width="62"/>
+        <TextBox x:Name="txbCategoria" HorizontalAlignment="Left" Margin="139,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="131,252,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
