@@ -5,15 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestockTeste.Apresentação"
         mc:Ignorable="d"
-        Title="frmCadastro" Height="310" Width="380">
+        Title="Cadastro de Produto" Height="310" Width="380">
     <Grid>
-        <Label x:Name="lblId" Content="ID" HorizontalAlignment="Left" Margin="54,45,0,0" VerticalAlignment="Top" Width="84" Height="54"/>
-        <TextBox x:Name="txbId" HorizontalAlignment="Left" Margin="125,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblNome" Content="Nome" HorizontalAlignment="Left" Margin="58,121,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txbNome" HorizontalAlignment="Left" Margin="125,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblCategoria" Content="Categoria" HorizontalAlignment="Left" Margin="63,200,0,0" VerticalAlignment="Top" Width="62"/>
-        <TextBox x:Name="txbCategoria" HorizontalAlignment="Left" Margin="139,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="131,252,0,0" VerticalAlignment="Top"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="79*"/>
+            <ColumnDefinition Width="301*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblId" Content="ID" HorizontalAlignment="Left" Margin="58,13,0,0" VerticalAlignment="Top" Width="84" Height="54" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txbId" HorizontalAlignment="Left" Margin="46,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label x:Name="lblNome" Content="Nome" HorizontalAlignment="Left" Margin="58,49,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txbNome" HorizontalAlignment="Left" Margin="46,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label x:Name="lblCategoria" Content="Categoria" HorizontalAlignment="Left" Margin="58,95,0,0" VerticalAlignment="Top" Width="62" Grid.ColumnSpan="2" RenderTransformOrigin="0.597,-2.194"/>
+        <TextBox x:Name="txbCategoria" HorizontalAlignment="Left" Margin="46,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Button x:Name="btnCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="52,252,0,0" VerticalAlignment="Top" Grid.Column="1" Click="btnCadastrar_Click_1"/>
+        <Label x:Name="lblLote" Content="Lote" HorizontalAlignment="Left" Margin="70,147,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txbLote" Grid.Column="1" HorizontalAlignment="Left" Margin="46,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblQuantidade" Content="Quantidade" HorizontalAlignment="Left" Margin="48,186,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="77"/>
+        <TextBox x:Name="txbQuantidade" Grid.Column="1" HorizontalAlignment="Left" Margin="46,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
 
     </Grid>
 </Window>
