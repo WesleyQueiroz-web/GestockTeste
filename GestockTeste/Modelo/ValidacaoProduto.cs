@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace GestockTeste.Modelo
 {
-    public class Validacao
+    public class ValidacaoProduto
     {
         public string mensagem = String.Empty;
         public int id;
     
 
-    public Validacao()
+    public ValidacaoProduto()
         {
 
         }
-        public Validacao(List<String> listaDadosProduto)
+        public ValidacaoProduto(List<String> listaDadosProduto)
 
         {
             ValidarId(listaDadosProduto[0]);

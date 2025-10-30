@@ -12,7 +12,10 @@ namespace GestockTeste.Modelo
         public string nome { get; set; }
         public string categoria { get; set; }
         public int lote { get; set; }
-        public int quantidade { get; set; } 
+        public int quantidade { get; set; }
+
+        public int FornecedorId { get; set; }
+        public Fornecedores Fornecedores { get; set; }
 
     }
 }

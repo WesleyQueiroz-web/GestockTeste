@@ -45,47 +45,57 @@ namespace GestockTeste.DAL
         public Produto PesquisarProdutoPorId(Produto produto)
         {
             SqlConnection con = Conexao.Conectar();
-            if (!Conexao.mensagem.Equals(""))
+            if (!string.IsNullOrEmpty(Conexao.mensagem))
             {
                 this.mensagem = Conexao.mensagem;
                 return null;
             }
+
             string sql = "SELECT * FROM Produto WHERE id = @id";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.AddWithValue("@id", produto.id);
-            SqlDataReader reader dr; = null;
+
+            SqlDataReader dr = null;
+
             try
             {
                 dr = cmd.ExecuteReader();
-                if (drHasRows)
+
+                if (dr.HasRows)
                 {
                     dr.Read();
-                    produto.id = dr["nome"].ToString();
+
+                    produto.id = Convert.ToInt32(dr["id"]);
+                    produto.nome = dr["nome"].ToString();
                     produto.categoria = dr["categoria"].ToString();
-                    produto.lote = int.Parse(dr["lote"].ToString());
-                    produto.quantidade = int.Parse(dr["quantidade"].ToString());
+                    produto.lote = dr["lote"].ToString(); // se for string, senão converta
+                    produto.quantidade = Convert.ToInt32(dr["quantidade"]);
                 }
                 else
                 {
-                    produto.id = 0;
+                    produto = null;
                     this.mensagem = "ID do produto não encontrado!";
-
                 }
             }
             catch (Exception ex)
             {
                 mensagem = "Erro ao pesquisar produto: " + ex.Message;
+                produto = null;
             }
             finally
             {
                 Conexao.Desconectar(con);
             }
+
             return produto;
         }
+
+        }
+
         public List<Produto> PesquisarPorNome(Produto produto)
         {
             this.mensagem = "";
-            Lista<Produto> listaProdutos = new Lista<Produto>();
+            List<Produto> listaProdutos = new List<Produto>();
             SqlConnection con = Conexao.Conectar();
             if (!Conexao.mensagem.Equals(""))
             {
